@@ -1,0 +1,74 @@
+{
+  "findSenior": {
+    "requestMethod": "GET",
+    "index": "demo/_search",
+    "script": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "wildcard": {
+                "name": {
+                  "value": "#{name}"
+                }
+              }
+            },
+            {
+              "term": {
+                "id": {
+                  "value": "#{id}"
+                }
+              }
+            }
+          ],
+          "must_not": [
+            {
+              "range": {
+                "age": {
+                  "gte": "#{age}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "findSeniorTest": {
+    "requestMethod": "GET",
+    "index": "demo/_search",
+    "script": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "wildcard": {
+                "name": {
+                  "value": "#{name}"
+                }
+              }
+            },
+            {
+              "term": {
+                "id": {
+                  "value": "#{id}"
+                }
+              }
+            }
+          ],
+          "must_not": [
+            {
+              "range": {
+                "age": {
+                  "gte": "#{age}"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "from": "#{pageFrom}",
+      "size": "#{pageSize}"
+    }
+  }
+}

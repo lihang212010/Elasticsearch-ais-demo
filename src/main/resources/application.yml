@@ -1,0 +1,5 @@
+elasticsearch:
+  ais:
+     url: node-3:9200
+     aisResource: com.ais
+     jsonPath: static

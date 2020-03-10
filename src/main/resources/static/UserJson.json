@@ -1,0 +1,43 @@
+{
+  "findName": {
+    "requestMethod": "GET",
+    "index": "demo/_search",
+    "script": {
+      "query": {
+        "wildcard": {
+          "name": {
+            "value": "#{name}"
+          }
+        }
+      }
+    }
+  },
+
+  "findIdName": {
+
+    "requestMethod": "GET",
+    "index": "demo/_search",
+    "script": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "wildcard": {
+                "name": {
+                  "value": "#{name}"
+                }
+              }
+            },
+            {
+              "term": {
+                "id": {
+                  "value": "#{id}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
