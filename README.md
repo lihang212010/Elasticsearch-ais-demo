@@ -1,3 +1,8 @@
+
+使用手册 ：[http://node-2:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html)
+
+User manual：[http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
+
 ELASTICSEARCH-AIS
 为什么使用ais
 
