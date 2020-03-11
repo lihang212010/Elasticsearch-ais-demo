@@ -3,14 +3,23 @@ ELASTICSEARCH-AIS
 
 简单配置
 elasticsearch.ais.url=node-3:9200                            集群则用逗号隔开
+
 elasticsearch.ais.aisResource=com.ais                         @Elasticsearch注解的接口位置，不配置则扫描所有路径，会导致springboot启动较慢，建议配置为项目路径
+
 elasticsearch.ais.userName=""                                      用户名
+
 elasticsearch.ais.passWard=""                                       密码
+
 elasticsearch.ais.socketTimeout=30000                        socket连接超时时间
+
 elasticsearch.ais.connectTimeout=10000                       connect连接超时时间
+
 elasticsearch.ais.scheme="http"                                    访问方式
+
 elasticsearch.ais.header=""                                            请求头
+
 elasticsearch.ais.value=""                                                请求头对应值
+
 elasticsearch.ais.jsonPath=static                               json文件路径
 
 ESTEPLATE，最简单的操作
