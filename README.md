@@ -52,6 +52,7 @@ Esteplate是ais中最简单也是最常用的操作Elasticsearch的操作方式�
 
 
 User是一个实体类实际上我们的操作只有 estemplate.insert(list,index); 这么一行，index是对应插入的索引位置，list则是一个实体类List，ais会自动排除List中的空值，所以并不需要我们对空值进行判断。
+
 当然除了这些ais还支持Map对象的插入和单一实体类的插入。
 
 删除
@@ -178,73 +179,129 @@ worker如果为空值，则本次查询将只对name和age进行查询
 
 
 查询相关API
+
 这些API如果你操纵过kibana，一定会非常属性，他和Elasticsearch中的名字是相同的，如果你不太明白，本文将提供一些简单的使用场景，对于每一个查询的具体内容，更建议Elasticsearch官方文档
+
 .
 .
 .
 查询常用参数
+
 type，           查询的方式，默认为must，可以选择must_not，filter_must ，filter_must_not
+
 key，             对应字段，查询的对应属性在Elasticsearch中名称
+
 value，          需要查询的对应值
+
 index              对应索引
+
 boost              排名分数比例，默认为1
 
+
 具体API
+
 查询相关的API
+
 term              准确查询，必备参数：key，value            可选参数type，boost
+
 wildcard       左右模糊查询，必备参数:key，value   可选参数：type，boost
+
 match           分词查询，必备参数key，value    可选参数type，boost
+
 wildcardLeft                 左模糊查询，必备参数:key，value   可选参数：type，boost
+
 wildcardRight                右模糊查询，必备参数:key，value   可选参数：type，boost
+
 wildcardFree                 自定义模糊查询，必备参数:key，value   可选参数：boost
+
 terms           包含查询，必备参数key，value，这里的value可以是数组和一个数，可选参数：type
+
 match_phrase         短语匹配，必备参数key，value，可选参数：slop：作用为词与词之间允许相隔的单词数目;          type
+
 match_phrase_prefix      短语前缀匹配，必备参数key，value，可选参数：slop：词与词之间允许相隔的单词数目，max_expansions：指定前缀最多匹配多少结果;         type
+
 common                    高频率查询，通过排除文章中的常用词来提高查询结果，不影响性能，必备参数：key，value，cutoff_frequency：排除文章中出现频率多少的词，可选参数：type
+
 exits                          判断某一属性是否存在，必备参数key，可选参数：type
+
 fuzzy                          纠错查询，会允许输入的参数有多少错误，必备参数：key，value，可选参数：fuzziness：允许多少错误，prefix_length：精确查询的长度，type
+
 geo_shape              地理位置查询，必备参数：key，coordinates：地理位置坐标，通常为一个多维数组，relation：查询方式
+
 ids                             id查询，必备参数values，可以是一个id，也可以是一个id组成的数组,可选参数：type
+
 multi_match          多字段分词查询，必备参数value，需要查找的值，keys，对应的字段数组，可选参数：type
+
 more_like_this      必须包含词查询，要求某（一个或多个）字段内容必须包含某一分词，必备参数：value：必须包含的分词，keys：字段，可以是一个或多个，min_term_freq：最小包含数目，max_query_terms：最多包含数目，可选参数：type
+
 percolate                 索引属性查询，对某一字段的索引属性进行查询，必备字段：key，value，field：存索引查询 的类型的字段，可选参数，type
+
 prefix                        左模糊（较为推荐），必备字段，key，value，可选参数：boost，type
+
 query_string           较为严格的字符串查询（可以进行和或非等操作，但如果查询中包含无效内容，则查询失败），必备字段：default_field：对应字段，query_：查询内容，可选参数：type
+
 range                         范围查询，必备参数：key，gte：大于等于的数值，lte小于等于的数值，可选参数：type
+
 rangegte                    大于等于范围查询，必备参数：key，gte：大于等于的数值，可选参数：type
+
 rangelte                         小于等于范围查询，必备参数：key，lte小于等于的数值，可选参数：type
+
 regexp                         正则查询，必备参数：key，value，可选参数：max_determinized_states：查询所需最大数目，默认10000,flags：可选运算符，type
+
 script                          脚本，可以自由植入自己想进行的语句，必备参数：source：植入的脚本，可选参数，lang，params，type
+
 simple_query_string         使用较为简单的符号操作进行查询（如+-|等），查询更为严格，必备参数：value，filed：一个或多个字段，可选参数：type
+
 wripper                        接受其他查询内容的查询，必备参数：query：其余查询的base64编码，可选参数：type
+
 findFree                        插入Elasticsearch原生的语句，默认参数：query：插入的语句，可选参数：type
+
 should                       可以进行或之类的操作，也可以进行加分，minimum_should_match：最少满足多少项
 
 .
 .
 .
 处理结果相关的API（这些操作较为简单，不依依展示，将会在几个常用查询例子中展示）
+
 source                     字段筛选，可以让结果之显示几个字段，参数：fields：一个或多个字段
+
 version                   是否显示版本号
+
 timeout                  查询时间
+
 stored_fields        另一种不太被推荐的字段筛选
+
 stats                      结果统计
+
 sort                        排序，如果需要对多个值进行排序，请在奇数位写需要排序的字段，偶数位写排序规则
+
 size                         （分页）每一页的最大数目
+
 from                       （分页）从第几页开始查询
+
 script_fields           脚本
+
 profile                      是否查看具体的聚合搜索过程以及具体耗时情况
+
 partial_fields          更加强大更为推荐的字段筛选
+
 indices_boost         相关度控制
+
 highlight                   高亮，可选字段pre_tags：高亮字段前面添加内容，post_tags：后面添加内容
+
 explain                      是否开启查看如何评分
+
 collapse                    字段折叠
+
 docvalue_fields      另一种查询，节省空间但会禁止使用sort、aggregate、access the field from script等
 
 
 查询结果：（以下3种查询均匀异步查询方法，使用方法类似）
+
 excute             获得所有查询结果并映射到实体类，参数：index：索引名，tClass：需要的返回值类型，requestMethod：请求方式
+
 excuteOne       执行所有查询，参数：index：索引名，tClass：需要的返回值类型，requestMethod：请求方式，tClass：需要的返回值类型
+
 excuteJson      执行所有查询并返回最原始的就是哦你结果，参数：index：索引名，requestMethod：请求方式
 
 
