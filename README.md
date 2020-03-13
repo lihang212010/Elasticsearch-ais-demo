@@ -4,6 +4,28 @@
 User manual：[http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
 
 ELASTICSEARCH-AIS
+maven导入：pom.xml
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        <dependency>
+            <groupId>com.github.lihang212010</groupId>
+            <artifactId>ais</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>7.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+            <optional>true</optional>
+        </dependency>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 为什么使用ais
 
 对空值的处理
