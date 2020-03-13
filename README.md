@@ -4,6 +4,8 @@
 User manual：[http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
 
 ELASTICSEARCH-AIS
+
+
 maven导入：pom.xml
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,6 +28,9 @@ maven导入：pom.xml
             <optional>true</optional>
         </dependency>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+（elasticsearch-rest-client是官方提供的操作Elasticsearch的方式类似与jabc，fastjson是用来解析结果）
+
+
 为什么使用ais
 
 对空值的处理
