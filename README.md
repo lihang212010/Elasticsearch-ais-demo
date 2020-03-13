@@ -1,7 +1,7 @@
 
-使用手册 ：[http://node-2:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html)
+使用手册 ：[http://49.232.76.209:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html](http://49.232.76.209:8080/ais/Elasticsearch-ais/Elasticsearch-ais.html)
 
-User manual：[http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://node-2:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
+User manual：[http://49.232.76.209:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://49.232.76.209:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
 
 ELASTICSEARCH-AIS
 
