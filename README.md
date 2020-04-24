@@ -25,7 +25,7 @@ maven导入：pom.xml
             <optional>true</optional>
         </dependency>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-（elasticsearch-rest-client是官方提供的操作Elasticsearch的方式类似与jabc，fastjson是用来解析结果）
+（elasticsearch-rest-client是官方提供的操作Elasticsearch的方式类似与jdbc，fastjson是用来解析结果）
 
 
 为什么使用ais
