@@ -1,9 +1,9 @@
 package com.ais.demo.controller.find;
 
 import com.ais.demo.entity.User;
-import com.elasticsearch.ais.Estemplate;
-import com.elasticsearch.ais.staticString.Find;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.elasticsearch.ais.Estemplate;
+import org.springframework.boot.elasticsearch.ais.staticString.Find;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,7 +46,7 @@ public class Finds {
     @RequestMapping("find2")
     public List<User> find2() throws IOException {
         estemplate.script("doc['age']>20");
-        estemplate.should(1,Find.term("name","张三"),Find.term("name","liu"));
+        estemplate.should(1, Find.term("name","张三"), Find.term("name","liu"));
         estemplate.from(0);
         estemplate.size(20);
         return estemplate.execute(index,User.class);

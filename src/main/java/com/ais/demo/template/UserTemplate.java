@@ -7,7 +7,7 @@ package com.ais.demo.template;
  *  */
 
 import com.ais.demo.entity.User;
-import com.elasticsearch.ais.template.POJOTemplate;
+import org.springframework.boot.elasticsearch.ais.template.POJOTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository

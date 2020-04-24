@@ -1,8 +1,8 @@
 package com.ais.demo.controller.find;
 
 import com.ais.demo.entity.User;
-import com.elasticsearch.ais.EstemplateCustom;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.elasticsearch.ais.EstemplateCustom;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

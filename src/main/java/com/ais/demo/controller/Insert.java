@@ -6,9 +6,9 @@ package com.ais.demo.controller;
 
 import com.ais.demo.entity.User;
 import com.ais.demo.utils.Data;
-import com.elasticsearch.ais.Estemplate;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.elasticsearch.ais.Estemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
