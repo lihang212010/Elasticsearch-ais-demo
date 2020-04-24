@@ -1,7 +1,7 @@
 ELASTICSEARCH-AIS
 
 
-User manual：[http://49.232.76.209:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html](http://49.232.76.209:8080/ais/Elasticsearch-ais-Enaglish/Elasticsearch-ais.html)
+
 
 maven：pom.xml
 
@@ -9,7 +9,7 @@ maven：pom.xml
         <dependency>
             <groupId>com.github.lihang212010</groupId>
             <artifactId>ais</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
         <dependency>
